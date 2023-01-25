@@ -20,6 +20,26 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Constituencies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3RpdHVlbmNpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Constituencies/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3RpdHVlbmNpZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Constituencies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3RpdHVlbmNpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Constituencies/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3RpdHVlbmNpZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Constituencies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3RpdHVlbmNpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Shenor/source/repos/ElectionWeb/Views/Countries/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyaWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,12 +60,56 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyaWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Data/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Shenor/source/repos/ElectionWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Shenor/source/repos/ElectionWeb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/LGAs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTEdBc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/LGAs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTEdBc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/LGAs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTEdBc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/LGAs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTEdBc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/LGAs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTEdBc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/PollingUnits/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9sbGluZ1VuaXRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/PollingUnits/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9sbGluZ1VuaXRzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/PollingUnits/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9sbGluZ1VuaXRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/PollingUnits/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9sbGluZ1VuaXRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/PollingUnits/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9sbGluZ1VuaXRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Shenor/source/repos/ElectionWeb/Views/Shared/Error.cshtml]
@@ -56,8 +120,52 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Shared/_Navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Shenor/source/repos/ElectionWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/StateRegions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVSZWdpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/StateRegions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVSZWdpb25zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/StateRegions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVSZWdpb25zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/StateRegions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVSZWdpb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/StateRegions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVSZWdpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Wards/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Wards/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Wards/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Wards/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Wards/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Shenor/source/repos/ElectionWeb/Views/_ViewImports.cshtml]
@@ -71,3 +179,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Shenor/source/repos/ElectionWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gz3fn5rehx
+
+[C:/Users/Shenor/source/repos/ElectionWeb/Views/Shared/_LayoutStar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRTdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-7btkh9b3wr

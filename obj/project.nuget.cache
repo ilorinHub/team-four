@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JKecsWj1BxdAyY1lxywQUUz/EAgu2kNkgco9Pfp2KRtp5SABOvKIWgs8vtLNjICCIGqmmq70hukP+DukLDX75g==",
+  "dgSpecHash": "REL+V4iZ0ZqaEPhYJfwYILOnOXtMGpoowFKRVLOyYQB0bc3nc2Frncyr4XdtWMLYRJhRiPPYEYnvCpdkBJiJMQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\ElectionWeb.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Shenor\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\Shenor\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Shenor\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Shenor\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

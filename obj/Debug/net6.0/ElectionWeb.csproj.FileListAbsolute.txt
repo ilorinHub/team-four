@@ -277,3 +277,5 @@ C:\Users\Shenor\source\repos\ElectionWeb\bin\Debug\net6.0\runtimes\unix\lib\net6
 C:\Users\Shenor\source\repos\ElectionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Shenor\source\repos\ElectionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Shenor\source\repos\ElectionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Shenor\source\repos\ElectionWeb\bin\Debug\net6.0\CsvHelper.dll
+C:\Users\Shenor\source\repos\ElectionWeb\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutStar.cshtml.rz.scp.css
