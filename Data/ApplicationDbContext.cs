@@ -19,5 +19,11 @@ namespace ElectionWeb.Data
         public DbSet<PollingUnit> PollingUnits  { get; set; }
         public DbSet<Result> Results  { get; set; }
         public DbSet<PartyResult> PartyResults  { get; set; }
+        public DbSet<Party> Parties { get; set; }
+        public DbSet<ElectionType> ElectionTypes { get; set; }
+        public DbSet<Election> Elections { get; set; }
+        public DbSet<Aspirant> Aspirants { get; set; }
+        public DbSet<ApplicationUsers> ApplicationUsers { get; set; }
+        public DbSet<ElectionWeb.Models.ReportCase> ReportCase { get; set; }
     }
 }

@@ -11,7 +11,7 @@ using ElectionWeb.Models.ViewModels;
 
 namespace ElectionWeb.Controllers
 {
-    public class ConstituenciesController : Controller
+    public class ConstituenciesController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -61,6 +61,12 @@ namespace ElectionWeb.Controllers
             if (ModelState.IsValid)
             {
                 var state = _context.StateRegions.Find(model.StateRegionId);
+                var nameExist = _context.Constituencies.Include(x => x.StateRegion).Any(x => x.Name.ToLower().Trim() == model.Name.ToLower().Trim() && x.StateRegion.Id == model.StateRegionId);
+                if (nameExist)
+                {
+                    DisplayError("Name Already In Use");
+                    return View(model);
+                }
                 var constituency = new Constituency()
                 {
                     Description = model.Description,
@@ -69,6 +75,7 @@ namespace ElectionWeb.Controllers
                 };
                 _context.Add(constituency);
                 await _context.SaveChangesAsync();
+                DisplayMessage("Successful Operation");
                 return RedirectToAction(nameof(Index));
             }
             return View(model);

@@ -11,7 +11,7 @@ using ElectionWeb.Models.ViewModels;
 
 namespace ElectionWeb.Controllers
 {
-    public class LGAsController : Controller
+    public class LGAsController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -61,6 +61,12 @@ namespace ElectionWeb.Controllers
             if (ModelState.IsValid)
             {
                 var constituency = _context.Constituencies.Find(model.ConstituencyId);
+                var nameExist = _context.lGAs.Include(x => x.Constituency).Any(x => x.Name.ToLower().Trim() == model.Name.ToLower().Trim() && x.Constituency.Id == model.ConstituencyId);
+                if (nameExist)
+                {
+                    DisplayError("Name Already In Use");
+                    return View(model);
+                }
                 var lga = new LGA
                 {
                      Constituency = constituency,
@@ -69,6 +75,7 @@ namespace ElectionWeb.Controllers
                 };
                 _context.Add(lga);
                 await _context.SaveChangesAsync();
+                DisplayMessage("Saved Successfully");
                 return RedirectToAction(nameof(Index));
             }
             return View(model);

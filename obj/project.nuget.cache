@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "REL+V4iZ0ZqaEPhYJfwYILOnOXtMGpoowFKRVLOyYQB0bc3nc2Frncyr4XdtWMLYRJhRiPPYEYnvCpdkBJiJMQ==",
+  "dgSpecHash": "+gJEC6VFkxXkT5ljcUfnBRBRTnrXzZfSPTNTwat91tXWrOqy2K5zsBrK3Z5+GZB3ONnsynJ+RmBxCELsSpNYPQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\ElectionWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shenor\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\Shenor\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Shenor\\.nuget\\packages\\jquery\\1.6.3\\jquery.1.6.3.nupkg.sha512",
     "C:\\Users\\Shenor\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Shenor\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\Shenor\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
@@ -185,7 +186,8 @@
     "C:\\Users\\Shenor\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Shenor\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Shenor\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\Shenor\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\Shenor\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Shenor\\.nuget\\packages\\toastr\\2.1.1\\toastr.2.1.1.nupkg.sha512"
   ],
   "logs": []
 }

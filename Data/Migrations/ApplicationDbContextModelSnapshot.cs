@@ -22,6 +22,49 @@ namespace ElectionWeb.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("ElectionWeb.Models.Aspirant", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("CodeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("ElectionId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("PartyId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ElectionId");
+
+                    b.HasIndex("PartyId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Aspirants");
+                });
+
             modelBuilder.Entity("ElectionWeb.Models.Constituency", b =>
                 {
                     b.Property<long>("Id")
@@ -145,7 +188,7 @@ namespace ElectionWeb.Data.Migrations
 
                     b.HasIndex("ElectionTypeId");
 
-                    b.ToTable("Election");
+                    b.ToTable("Elections");
                 });
 
             modelBuilder.Entity("ElectionWeb.Models.ElectionType", b =>
@@ -181,7 +224,7 @@ namespace ElectionWeb.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ElectionType");
+                    b.ToTable("ElectionTypes");
                 });
 
             modelBuilder.Entity("ElectionWeb.Models.LGA", b =>
@@ -267,7 +310,7 @@ namespace ElectionWeb.Data.Migrations
 
                     b.HasIndex("CountryId");
 
-                    b.ToTable("Party");
+                    b.ToTable("Parties");
                 });
 
             modelBuilder.Entity("ElectionWeb.Models.PartyResult", b =>
@@ -544,6 +587,10 @@ namespace ElectionWeb.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -595,6 +642,8 @@ namespace ElectionWeb.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -680,6 +729,46 @@ namespace ElectionWeb.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("ElectionWeb.Models.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NIN")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("ApplicationUser");
+                });
+
+            modelBuilder.Entity("ElectionWeb.Models.Aspirant", b =>
+                {
+                    b.HasOne("ElectionWeb.Models.Election", "Election")
+                        .WithMany()
+                        .HasForeignKey("ElectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ElectionWeb.Models.Party", "Party")
+                        .WithMany()
+                        .HasForeignKey("PartyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Election");
+
+                    b.Navigation("Party");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ElectionWeb.Models.Constituency", b =>

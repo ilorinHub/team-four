@@ -353,6 +353,18 @@
       "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Regular.woff2"
     },
     {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Labour PartyUntitled-1s.jpg",
+      "PackagePath": "staticwebassets\\images\\Labour PartyUntitled-1s.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Untitled-1s.jpg",
+      "PackagePath": "staticwebassets\\images\\Untitled-1s.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Untitled-1s.jpgLabour Party",
+      "PackagePath": "staticwebassets\\images\\Untitled-1s.jpgLabour Party"
+    },
+    {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\auth\\lockscreen-bg.jpg",
       "PackagePath": "staticwebassets\\images\\auth\\lockscreen-bg.jpg"
     },

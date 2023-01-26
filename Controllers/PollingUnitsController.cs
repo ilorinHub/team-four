@@ -11,7 +11,7 @@ using ElectionWeb.Models.ViewModels;
 
 namespace ElectionWeb.Controllers
 {
-    public class PollingUnitsController : Controller
+    public class PollingUnitsController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -61,6 +61,12 @@ namespace ElectionWeb.Controllers
             if (ModelState.IsValid)
             {
                 var ward = _context.Wards.Find(model.WardId);
+                var nameExist = _context.PollingUnits.Include(x => x.Ward).Any(x => x.Name.ToLower().Trim() == model.Name.ToLower().Trim() && x.Ward.Id == model.WardId);
+                if (nameExist)
+                {
+                    DisplayError("Name Already In Use");
+                    return View(model);
+                }
                 var pollingUnit = new PollingUnit
                 {
                     Name = model.Name,

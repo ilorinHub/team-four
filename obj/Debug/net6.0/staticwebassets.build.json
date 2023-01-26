@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SZY525IzEo2FEyJRXkZgpXpNH69bVsUx0v9Uxu+zxXA=",
+  "Hash": "SJ7+e32SEIdTI2R3HAAc3VAwPdG4r916+i5qcITakNQ=",
   "Source": "ElectionWeb",
   "BasePath": "_content/ElectionWeb",
   "Mode": "Default",
@@ -3791,6 +3791,23 @@
       "OriginalItemSpec": "wwwroot\\images\\file-icons\\64\\008-archive.png"
     },
     {
+      "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Labour PartyUntitled-1s.jpg",
+      "SourceId": "ElectionWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\",
+      "BasePath": "_content/ElectionWeb",
+      "RelativePath": "images/Labour PartyUntitled-1s.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Labour PartyUntitled-1s.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\lightbox\\play-button.png",
       "SourceId": "ElectionWeb",
       "SourceType": "Discovered",
@@ -4061,6 +4078,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\sprites\\yellow.png"
+    },
+    {
+      "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Untitled-1s.jpg",
+      "SourceId": "ElectionWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\",
+      "BasePath": "_content/ElectionWeb",
+      "RelativePath": "images/Untitled-1s.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Untitled-1s.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Untitled-1s.jpgLabour Party",
+      "SourceId": "ElectionWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\",
+      "BasePath": "_content/ElectionWeb",
+      "RelativePath": "images/Untitled-1s.jpgLabour Party",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Untitled-1s.jpgLabour Party"
     },
     {
       "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\js\\ace.js",

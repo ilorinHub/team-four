@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace ElectionWeb.Controllers
 {
-	public class DataController : Controller
+	public class DataController : BaseController
 	{
 
         private readonly ApplicationDbContext _context;
@@ -25,7 +25,12 @@ namespace ElectionWeb.Controllers
         [HttpPost]
         public IActionResult Create(DataUpload upload)
         {
-           
+            var extension = Path.GetExtension(upload.File.FileName);
+            if (extension != "csv")
+            {
+                DisplayError("Only Files in CSV Formats are allowed");
+                return View("Index", upload);
+            }
             using (var reader = new StreamReader(upload.File.OpenReadStream()))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {

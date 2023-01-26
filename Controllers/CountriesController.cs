@@ -11,7 +11,7 @@ using ElectionWeb.Models.ViewModels;
 
 namespace ElectionWeb.Controllers
 {
-    public class CountriesController : Controller
+    public class CountriesController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -59,6 +59,12 @@ namespace ElectionWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                var nameExist = _context.Countries.Any(x => x.Name.ToLower().Trim() == model.Name.ToLower().Trim());
+                if (nameExist)
+                {
+                    DisplayError("Name Already In Use");
+                    return View(model);
+                }
                 var country = new Country()
                 {
                     Name = model.Name,
@@ -66,6 +72,7 @@ namespace ElectionWeb.Controllers
                 };
                 _context.Add(country);
                 await _context.SaveChangesAsync();
+                DisplayMessage("Country Created Successfully");
                 return RedirectToAction(nameof(Index));
             }
             return View(model);

@@ -12,7 +12,7 @@ using static ElectionWeb.Models.ViewModels.StateRegionViewModel;
 
 namespace ElectionWeb.Controllers
 {
-    public class StateRegionsController : Controller
+    public class StateRegionsController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -62,14 +62,23 @@ namespace ElectionWeb.Controllers
             if (ModelState.IsValid)
             {
                 var country =  await _context.Countries.FindAsync(model.CountryId);
+
+                var nameExist = _context.StateRegions.Include(x=>x.Country).Any(x => x.Name.ToLower().Trim() == model.Name.ToLower().Trim() && x.Country.Id == model.CountryId);
+                if (nameExist)
+                {
+                    DisplayError("Name Already In Use");
+                    return View(model);
+                }
                 var stateRegion = new StateRegion()
                 {
                     Country = country,
                     Name = model.Name,
                     Description = model.Description
                 };
+
                 _context.Add(stateRegion);
                 await _context.SaveChangesAsync();
+                DisplayMessage("State Created Successfully");
                 return RedirectToAction(nameof(Index));
             }
             return View(model);
