@@ -1,5 +1,6 @@
 using ElectionWeb.Data;
 using ElectionWeb.Models;
+using ElectionWeb.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +15,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddIdentity<ApplicationUsers, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddDefaultUI();
 builder.Services.AddControllersWithViews();
-builder.Services.AddMvc();  
+builder.Services.AddMvc();
+builder.Services.AddScoped<IFileService, FileService>();
 
 var app = builder.Build();
 

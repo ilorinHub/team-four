@@ -1,6 +1,7 @@
 ﻿using ElectionWeb.Data;
 using ElectionWeb.Models;
 using ElectionWeb.Models.ViewModels;
+using ElectionWeb.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,12 +13,14 @@ namespace ElectionWeb.Controllers
 
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUsers> _userManager;
+        private readonly IFileService _fileService;
 
 
-        public UsersController(ApplicationDbContext context, UserManager<ApplicationUsers> userManager)
+        public UsersController(ApplicationDbContext context, IFileService fileService, UserManager<ApplicationUsers> userManager)
         {
             _context= context;
             _userManager= userManager; 
+            _fileService= fileService;
         }
         public IActionResult Index()
         {
@@ -59,8 +62,9 @@ namespace ElectionWeb.Controllers
             {
                 Id = id,
                 Email = user.Email,
-                Name = user.UserName,
                 NIN = user.NIN,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
             };
             var userRoles = _context.UserRoles.ToList();
             var roles = _context.Roles.ToList();
@@ -84,6 +88,20 @@ namespace ElectionWeb.Controllers
             if (ModelState.IsValid)
             {
                 var user = _context.ApplicationUsers.Find(model.Id);
+                if(user == null)
+                {
+                    DisplayError("User not Found");
+                    return View(model);
+                };
+                if(model.Photo != default)
+                {
+                    var uploadImage = await _fileService.UploadFile(model.Photo, user.Email);
+                    user.Image = uploadImage.Item2;
+                }
+               
+                user.FirstName = model.FirstName ?? user.FirstName;
+                user.LastName = model.LastName ?? user.LastName;
+                user.NIN = model.NIN ?? user.NIN;   
                 var userRoles = _context.UserRoles.ToList();
                 var roles = _context.Roles.ToList();
                 var userRole = userRoles.FirstOrDefault(u => u.UserId == model.Id);

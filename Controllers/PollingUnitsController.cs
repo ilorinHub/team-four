@@ -61,6 +61,11 @@ namespace ElectionWeb.Controllers
             if (ModelState.IsValid)
             {
                 var ward = _context.Wards.Find(model.WardId);
+                if(ward == null)
+                {
+                    DisplayError("Invalid Ward Passes");
+                    return View(model);
+                }
                 var nameExist = _context.PollingUnits.Include(x => x.Ward).Any(x => x.Name.ToLower().Trim() == model.Name.ToLower().Trim() && x.Ward.Id == model.WardId);
                 if (nameExist)
                 {
@@ -71,7 +76,8 @@ namespace ElectionWeb.Controllers
                 {
                     Name = model.Name,
                     Description = model.Description,
-                    Ward = ward
+                    Ward = ward,
+                    PollingUnitId = string.Empty
                 };
                 _context.Add(pollingUnit);
                 await _context.SaveChangesAsync();

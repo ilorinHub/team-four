@@ -24,6 +24,6 @@ namespace ElectionWeb.Data
         public DbSet<Election> Elections { get; set; }
         public DbSet<Aspirant> Aspirants { get; set; }
         public DbSet<ApplicationUsers> ApplicationUsers { get; set; }
-        public DbSet<ElectionWeb.Models.ReportCase> ReportCase { get; set; }
+        public DbSet<ReportCase> ReportCase { get; set; }
     }
 }

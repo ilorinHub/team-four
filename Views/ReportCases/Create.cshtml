@@ -1,37 +1,36 @@
-﻿@model ElectionWeb.Models.ReportCase
+﻿@model ElectionWeb.Models.ViewModels.ReportCaseCreateViewModel
 
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_LayoutStar.cshtml";
 }
 
-<h1>Create</h1>
 
 <h4>ReportCase</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Case" class="control-label"></label>
-                <select asp-for="Case" class="form-control"></select>
+                <select asp-for="Case" class="form-control" asp-items="ViewBag.Cases">Select A Case</select>
                 <span asp-validation-for="Case" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Latitude" class="control-label"></label>
-                <input asp-for="Latitude" class="form-control" />
+                <input id="latitude" disabled asp-for="Latitude" class="form-control" />
                 <span asp-validation-for="Latitude" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Longitude" class="control-label"></label>
-                <input asp-for="Longitude" class="form-control" />
+                <input id="longitude" disabled asp-for="Longitude" class="form-control" />
                 <span asp-validation-for="Longitude" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Note" class="control-label"></label>
-                <input asp-for="Note" class="form-control" />
-                <span asp-validation-for="Note" class="text-danger"></span>
+                <label asp-for="CaseNote" class="control-label"></label>
+                <textarea rows="3" asp-for="CaseNote" class="form-control"></textarea>
+                <span asp-validation-for="CaseNote" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EventDate" class="control-label"></label>
@@ -40,34 +39,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Photo" class="control-label"></label>
-                <input asp-for="Photo" class="form-control" />
+                <input type="file" asp-for="Photo" class="form-control" />
                 <span asp-validation-for="Photo" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="CodeId" class="control-label"></label>
-                <input asp-for="CodeId" class="form-control" />
-                <span asp-validation-for="CodeId" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Deleted" /> @Html.DisplayNameFor(model => model.Deleted)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control" />
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdatedAt" class="control-label"></label>
-                <input asp-for="UpdatedAt" class="form-control" />
-                <span asp-validation-for="UpdatedAt" class="text-danger"></span>
-            </div>
+          
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -78,6 +53,27 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        getLocation()
+    });
+    var x = document.getElementById("demo");
+    var lat = document.getElementById("latitude");
+    var long = document.getElementById("longitude");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        lat.value = position.coords.latitude;
+        long.value = position.coords.longitude;
+    }
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -47,8 +47,20 @@ namespace ElectionWeb.Controllers
         // GET: Elections/Create
         public IActionResult Create()
         {
-			ViewBag.ElectionTypes = new SelectList(_context.ElectionTypes, "Id", "Name");
-			ViewBag.Countries = new SelectList(_context.Countries, "Id", "Name");
+            var elections = _context.ElectionTypes;
+            var countries = _context.Countries;
+            if (!elections.Any())
+            {
+                DisplayError("Create Election Types Before Attempting to create Elections");
+                return View("Index");
+            }
+            if (!countries.Any())
+            {
+                DisplayError("Create Countries Before Attempting to create Elections");
+                return View("Index");
+            }
+            ViewBag.ElectionTypes = new SelectList(elections, "Id", "Name");
+			ViewBag.Countries = new SelectList(countries, "Id", "Name");
 			return View();
         }
 
@@ -83,6 +95,7 @@ namespace ElectionWeb.Controllers
                 };
                 _context.Add(election);
                 await _context.SaveChangesAsync();
+                DisplayMessage("Election Created Successfully");
                 return RedirectToAction(nameof(Index));
             }
             return View(model);

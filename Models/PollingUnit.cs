@@ -7,6 +7,8 @@ namespace ElectionWeb.Models
         [Required]
         public string Name { get; set; }
         [Required]
+        public string PollingUnitId { get; set; }
+        [Required]
         public string Description { get; set; }
         [Required]
         public Ward Ward { get; set; }

@@ -11,7 +11,7 @@ using ElectionWeb.Models.ViewModels;
 
 namespace ElectionWeb.Controllers
 {
-    public class ElectionTypesController : Controller
+    public class ElectionTypesController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -66,6 +66,7 @@ namespace ElectionWeb.Controllers
                 };
                 _context.Add(electionType);
                 await _context.SaveChangesAsync();
+                DisplayMessage("Election Type Created Successfully");
                 return RedirectToAction(nameof(Index));
             }
             return View(model);

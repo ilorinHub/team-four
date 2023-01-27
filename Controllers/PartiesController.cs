@@ -9,16 +9,18 @@ using ElectionWeb.Data;
 using ElectionWeb.Models;
 using ElectionWeb.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
+using ElectionWeb.Services;
 
 namespace ElectionWeb.Controllers
 {
     public class PartiesController : BaseController
     {
         private readonly ApplicationDbContext _context;
-
-        public PartiesController(ApplicationDbContext context)
+        private readonly IFileService _fileService;
+        public PartiesController(ApplicationDbContext context, IFileService fileService)
         {
             _context = context;
+            _fileService = fileService;
         }
 
         // GET: Parties
@@ -59,6 +61,7 @@ namespace ElectionWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Name,Description,Logo,CountryId")] PartyCreateViewModel model)
         {
+
             var nameExist = _context.Parties.Include(x => x.Country).Any(x => x.Name.ToLower().Trim() == model.Name.ToLower().Trim() && x.Country.Id == model.CountryId);
             if (nameExist)
             {
@@ -66,23 +69,13 @@ namespace ElectionWeb.Controllers
                 return View(model);
             }
 
-            var logo = model.Logo;
-            var logoName = model.Logo.FileName;
-            
-            var extension = Path.GetExtension(logoName);
-            List<string> acceptedFormats = new List<string>() {".png", ".jpg", ".jpeg"};
-            if (!acceptedFormats.Contains(extension))
+            var uploadImage = await _fileService.UploadFile(model.Logo, model.Name);
+            if (!uploadImage.Item1)
             {
-                var message = string.Format("{0}, not permitted on the method", extension);
-                DisplayError(message);
+                DisplayError(uploadImage.Item2);
                 return View(model);
             }
-
-			var fileName = model.Name + Path.GetFileName(logoName);
-			string uploadpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images", fileName);
-			var stream = new FileStream(uploadpath, FileMode.Create);
-			await model.Logo.CopyToAsync(stream);
-			var country = _context.Countries.Find(model.CountryId);
+            var country = _context.Countries.Find(model.CountryId);
             if(country == null)
             {
                 DisplayError("Country not valid");
@@ -91,7 +84,7 @@ namespace ElectionWeb.Controllers
             {
                Name = model.Name,
                Description = model.Description,
-               Logo = fileName,
+               Logo = uploadImage.Item2,
                Country = country
             };
             if (ModelState.IsValid)

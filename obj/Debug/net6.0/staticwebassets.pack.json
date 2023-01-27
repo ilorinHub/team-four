@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\ElectionWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\ResultUploadTemplate.csv",
+      "PackagePath": "staticwebassets\\Documents\\ResultUploadTemplate.csv"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\file.csv",
+      "PackagePath": "staticwebassets\\Documents\\file.csv"
+    },
+    {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\css\\maps\\horizontal-layout-dark\\style.css.map",
       "PackagePath": "staticwebassets\\css\\maps\\horizontal-layout-dark\\style.css.map"
     },
@@ -353,8 +361,24 @@
       "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Regular.woff2"
     },
     {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\APCFfMcWH5UAAADaMp.jpg",
+      "PackagePath": "staticwebassets\\images\\APCFfMcWH5UAAADaMp.jpg"
+    },
+    {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Labour PartyUntitled-1s.jpg",
       "PackagePath": "staticwebassets\\images\\Labour PartyUntitled-1s.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Labour Partyfront.PNG",
+      "PackagePath": "staticwebassets\\images\\Labour Partyfront.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\LabourPartyback.PNG",
+      "PackagePath": "staticwebassets\\images\\LabourPartyback.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\LabourPartyfront.PNG",
+      "PackagePath": "staticwebassets\\images\\LabourPartyfront.PNG"
     },
     {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Untitled-1s.jpg",
@@ -363,6 +387,18 @@
     {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Untitled-1s.jpgLabour Party",
       "PackagePath": "staticwebassets\\images\\Untitled-1s.jpgLabour Party"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\a15e405d-8a57-4297-92af-6e3134a069e3cyberpunk.jpg",
+      "PackagePath": "staticwebassets\\images\\a15e405d-8a57-4297-92af-6e3134a069e3cyberpunk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\adeshiname@gmail.comUntitled-1s.jpg",
+      "PackagePath": "staticwebassets\\images\\adeshiname@gmail.comUntitled-1s.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\adeshiname@gmail.comcyberpunk.jpg",
+      "PackagePath": "staticwebassets\\images\\adeshiname@gmail.comcyberpunk.jpg"
     },
     {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\auth\\lockscreen-bg.jpg",
@@ -655,6 +691,10 @@
     {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\file-icons\\64\\008-archive.png",
       "PackagePath": "staticwebassets\\images\\file-icons\\64\\008-archive.png"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\front.PNG",
+      "PackagePath": "staticwebassets\\images\\front.PNG"
     },
     {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\lightbox\\play-button.png",

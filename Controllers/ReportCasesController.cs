@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ElectionWeb.Data;
 using ElectionWeb.Models;
+using ElectionWeb.Models.Enums;
+using ElectionWeb.Models.ViewModels;
+using ElectionWeb.Services;
 
 namespace ElectionWeb.Controllers
 {
-    public class ReportCasesController : Controller
+    public class ReportCasesController : BaseController
     {
         private readonly ApplicationDbContext _context;
+        private readonly IFileService _fileService;
 
-        public ReportCasesController(ApplicationDbContext context)
+        public ReportCasesController(ApplicationDbContext context, IFileService fileService)
         {
             _context = context;
+            _fileService = fileService;
         }
 
         // GET: ReportCases
@@ -46,6 +51,13 @@ namespace ElectionWeb.Controllers
         // GET: ReportCases/Create
         public IActionResult Create()
         {
+            var cases = new List<string>();
+            foreach (var item in Enum.GetNames(typeof(Case)))
+            {
+                cases.Add(item);
+            }
+            cases.RemoveAt(0);
+            ViewBag.Cases = new SelectList(cases);
             return View();
         }
 
@@ -54,15 +66,34 @@ namespace ElectionWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Case,Latitude,Longitude,Note,EventDate,Photo,Id,CodeId,Active,Deleted,CreatedAt,UpdatedAt")] ReportCase reportCase)
+        public async Task<IActionResult> Create([Bind("Case,Latitude,Longitude,CaseNote,EventDate,Photo")] ReportCaseCreateViewModel model)
         {
             if (ModelState.IsValid)
             {
+                var uploadImage = await _fileService.UploadFile(model.Photo, Guid.NewGuid().ToString());
+                var reportCase = new ReportCase
+                {
+                     Case = model.Case,
+                     EventDate = model.EventDate,
+                     Note = model.CaseNote,
+                     Latitude = model.Latitude,
+                     Longitude = model.Longitude,
+                     Photo = uploadImage.Item2
+                };
                 _context.Add(reportCase);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(reportCase);
+            var cases = new List<string>();
+            foreach (var item in Enum.GetNames(typeof(Case)))
+            {
+                cases.Add(item);
+            }
+            cases.RemoveAt(0);
+            ViewBag.Cases = new SelectList(cases);
+            var errors = ModelState.Values.SelectMany(x => x.Errors);
+            DisplayError(errors.FirstOrDefault().ErrorMessage);
+            return View(model);
         }
 
         // GET: ReportCases/Edit/5

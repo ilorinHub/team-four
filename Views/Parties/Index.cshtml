@@ -50,15 +50,22 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
+                            var logo = "~/images/" + item.Logo;
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Name)
+                                    <div class="d-flex">
+                                        <img src="~/images/LabourPartyback.PNG"
+                                         alt="" />
+                                    </div>
+                                   
                                 </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Description)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Logo)
+
+
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.CodeId)

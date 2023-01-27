@@ -15,9 +15,9 @@ namespace ElectionWeb.Controllers
     public class AspirantsController : BaseController
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUsers> _userManager;
 
-        public AspirantsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public AspirantsController(ApplicationDbContext context, UserManager<ApplicationUsers> userManager)
         {
             _context = context;
             _userManager = userManager;
@@ -74,6 +74,8 @@ namespace ElectionWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PartyId, ElectionId ,Email")] AspirantCreateViewModel model)
         {
+            ViewBag.Elections = new SelectList(_context.Elections, "Id", "Name");
+            ViewBag.Parties = new SelectList(_context.Parties, "Id", "Name");
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(model.Email);
@@ -89,10 +91,16 @@ namespace ElectionWeb.Controllers
                     DisplayError("Invalid Party or Election Passed");
                     return View(model);
                 }
-                var contestantExist = _context.Aspirants.Include(x => x.Election).Include(x => x.Party).Any(x => x.Election.Id == model.ElectionId && x.Party.Id == model.PartyId);
+                var partyExist = _context.Aspirants.Include(x => x.Election).Include(x => x.Party).Any(x => x.Election.Id == model.ElectionId && x.Party.Id == model.PartyId);
+                var contestantExist = _context.Aspirants.Include(x => x.Election).Include(x => x.User).Any(x => x.User.Id == user.Id && x.Election.Id == model.ElectionId);
                 if (contestantExist)
                 {
-                    DisplayError("This Party already has a candidate Registered");
+                    DisplayError("This user has already been Registered for this Election");
+                    return View(model);
+                }
+                if (partyExist)
+                {
+                    DisplayError("This Party Already has a Candidate Assigned");
                     return View(model);
                 }
                 var aspirant = new Aspirant
