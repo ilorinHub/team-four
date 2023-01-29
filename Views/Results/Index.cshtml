@@ -4,63 +4,83 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutStar.cshtml";
 }
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Countries</h4>
+                <p class="card-description">
+              
+                    <a asp-action="Create">Upload Result</a>
+                </p>
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Upload Result</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Polling Unit
-            </th>
-            <th>
-                Ward
-            </th>
-            <th>
-               Total Votes
-            </th>
-            <th>
-                Total Parties
-            </th>
-            <th>
-                Uploaded By
-            </th>
-            <th>
-               Role
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PollingUnitName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WardName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalVoteCount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalParties)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Role)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Polling Unit
+                            </th>
+                            <th>
+                                Ward
+                            </th>
+                            <th>
+                                Total Votes
+                            </th>
+                            <th>
+                                Total Parties
+                            </th>
+                            <th>
+                                Uploaded By
+                            </th>
+                            <th>
+                                Role
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PollingUnitName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.WardName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TotalVoteCount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TotalParties)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Role)
+                                </td>
+                                @{
+                                    var message = "https://wa.me/?text=I%20found%20a%20great%20website.%20Check%20out%20this%20link%20https%3A%2F%2Fwww.example.com%2F";
+                                }
+                                <td>
+                                    <a href="@message">Share</a>
+                                    @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                    @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
