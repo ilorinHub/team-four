@@ -5,7 +5,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
@@ -138,7 +140,16 @@ namespace ElectionWeb.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    if(user.Email.ToLower() == "adeshiname@gmail.com")
+                    {
+                        var claimsFromList = ClaimsEngine.claimsList;
+                        var role = await _roleManager.FindByNameAsync(Roles.SuperAdmin);
+                        await _userManager.AddToRoleAsync(user, Roles.SuperAdmin);
+                        foreach (var item in claimsFromList)
+                        {
+                            await _userManager.AddClaimsAsync(user, claimsFromList);
+                        }
+                    }
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

@@ -1,4 +1,5 @@
-﻿ <!-- partial:partials/_settings-panel.html -->
+﻿@using ElectionWeb.Utilities;
+ <!-- partial:partials/_settings-panel.html -->
 <div class="theme-setting-wrapper">
     <div id="settings-trigger"><i class="ti-settings"></i></div>
     <div id="theme-settings" class="settings-panel">
@@ -172,7 +173,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -205,6 +206,12 @@
                 <span class="menu-title">Data Upload</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-action="DownloadTemplate" asp-controller="Data">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Template Download</span>
+            </a>
+        </li>
 
         <li class="nav-item nav-category">Election Module</li>
         <li class="nav-item">
@@ -234,21 +241,44 @@
                 <span class="menu-title">Results</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-action="WardResult" asp-controller="Results">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Ward Index</span>
+            </a>
+        </li>  <li class="nav-item">
+            <a class="nav-link" asp-action="StateIndex" asp-controller="Results">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">State Index</span>
+            </a>
+        </li>
 
 
         <li class="nav-item nav-category">User Module</li>
-        <li class="nav-item">
-            <a class="nav-link" asp-action="Index" asp-controller="Users">
-                <i class="mdi mdi-grid-large menu-icon"></i>
-                <span class="menu-title">User Management</span>
-            </a>
-        </li>
-        <li class="nav-item">
+        @if (User.IsInRole(Roles.SuperAdmin) || User.IsInRole(Roles.INEC))
+        {
+            <li class="nav-item">
+                <a class="nav-link" asp-action="Index" asp-controller="Users">
+                    <i class="mdi mdi-grid-large menu-icon"></i>
+                    <span class="menu-title">User Management</span>
+                </a>
+            </li>
+           
+               <li class="nav-item">
+                    <a class="nav-link" asp-action="Index" asp-controller="Roles">
+                        <i class="mdi mdi-grid-large menu-icon"></i>
+                        <span class="menu-title">Roles Management</span>
+                    </a>
+                </li>
+         
+        }
+        
+      @*  <li class="nav-item">
             <a class="nav-link" asp-action="Index" asp-controller="ElectionTypes">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Field Officers</span>
             </a>
-        </li>
+        </li>*@
         <li class="nav-item">
             <a class="nav-link" asp-action="Index" asp-controller="ReportCases">
                 <i class="mdi mdi-grid-large menu-icon"></i>

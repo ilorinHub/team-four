@@ -1,10 +1,12 @@
 ﻿using ElectionWeb.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ElectionWeb.Controllers
 {
 
-    public class BaseController : Controller
+	[Authorize]
+	public class BaseController : Controller
     {
         public void DisplayMessage(string message)
         {

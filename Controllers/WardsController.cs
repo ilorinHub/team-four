@@ -11,7 +11,7 @@ using ElectionWeb.Models.ViewModels;
 
 namespace ElectionWeb.Controllers
 {
-    public class WardsController : Controller
+    public class WardsController : BaseController
     {
         private readonly ApplicationDbContext _context;
 

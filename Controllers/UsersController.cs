@@ -2,6 +2,8 @@
 using ElectionWeb.Models;
 using ElectionWeb.Models.ViewModels;
 using ElectionWeb.Services;
+using ElectionWeb.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -22,6 +24,7 @@ namespace ElectionWeb.Controllers
             _userManager= userManager; 
             _fileService= fileService;
         }
+        //[Authorize(Policy = Policies.ManageUsers)]
         public IActionResult Index()
         {
             var users = _context.Users.ToList();
@@ -44,6 +47,10 @@ namespace ElectionWeb.Controllers
                 {
                     user.Role = roles.FirstOrDefault(r => r.Id == role.RoleId).Name;
                 }
+            }
+            if (User.IsInRole(Roles.INEC))
+            {
+                appUsers = appUsers.Where(x => x.Role != Roles.SuperAdmin).ToList();
             }
            
                
@@ -77,7 +84,12 @@ namespace ElectionWeb.Controllers
             {
                 viewModel.Role = roles.FirstOrDefault(r => r.Id == role.RoleId).Id;
             }
-            ViewBag.Roles = new SelectList(_context.Roles, "Id", "Name", viewModel.Role);
+            var selectRoles = _context.Roles;
+            if (User.IsInRole(Roles.INEC))
+            {
+                selectRoles.Where(x => x.Name != Roles.SuperAdmin).ToList();
+            }
+            ViewBag.Roles = new SelectList(selectRoles, "Id", "Name", viewModel.Role);
             return View(viewModel);
         }
 

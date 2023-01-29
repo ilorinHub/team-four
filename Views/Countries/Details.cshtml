@@ -1,64 +1,108 @@
-﻿@model ElectionWeb.Models.Country
+﻿@using ElectionWeb.Utilities;
+@model ElectionWeb.Models.ViewModels.CountriesViewModel
 
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_LayoutStar.cshtml";
 }
 
-<h1>Details</h1>
-
 <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Countries</h4>
-                <p class="card-description">
-                    <a asp-action="Create">Create New</a>
-                </p>
-                <dl class="row">
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Name)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Name)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Description)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Description)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.CodeId)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.CodeId)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Active)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Active)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.Deleted)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.Deleted)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.CreatedAt)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.CreatedAt)
-                    </dd>
-                    <dt class="col-sm-2">
-                        @Html.DisplayNameFor(model => model.UpdatedAt)
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.UpdatedAt)
-                    </dd>
-                </dl>
+                <h4 class="card-title">Details</h4>
+
+
+                <div class="row">
+                    <div class="col-md-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Country</h4>
+                                <p class="card-description">
+                                    @Html.DisplayFor(model => model.Country.Name)
+                                </p>
+                                <dl class="row">
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Country.Name)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Country.Name)
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.Country.Description)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.Country.Description)
+                                    </dd>
+                                    @if (User.IsInRole(Roles.SuperAdmin))
+                                    {
+                                        <dt class="col-sm-2">
+                                            @Html.DisplayNameFor(model => model.Country.CodeId)
+                                        </dt>
+                                        <dd class="col-sm-10">
+                                            @Html.DisplayFor(model => model.Country.CodeId)
+                                        </dd>
+                                        <dt class="col-sm-2">
+                                            @Html.DisplayNameFor(model => model.Country.Active)
+                                        </dt>
+                                        <dd class="col-sm-10">
+                                            @Html.DisplayFor(model => model.Country.Active)
+                                        </dd>
+                                        <dt class="col-sm-2">
+                                            @Html.DisplayNameFor(model => model.Country.Deleted)
+                                        </dt>
+                                        <dd class="col-sm-10">
+                                            @Html.DisplayFor(model => model.Country.Deleted)
+                                        </dd>
+                                       
+                                    }
+                                </dl>
+
+                                <h4 class="card-title">States</h4>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                State Name
+                                            </th>
+
+                                            <th>
+                                                Created At
+                                            </th>
+
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.StateRegions)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Name)
+                                                </td>
+
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                                                </td>
+
+                                                <td>
+                                                    <a asp-action="Edit" asp-controller="StateRegions" asp-route-id="@item.Id">Edit</a> |
+                                                    <a asp-action="Details" asp-controller="StateRegions" asp-route-id="@item.Id">Details</a> |
+                                                    <a asp-action="Delete" asp-controller="StateRegions" asp-route-id="@item.Id">Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
 
             </div>
@@ -66,8 +110,7 @@
     </div>
 </div>
 
-
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.Country.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

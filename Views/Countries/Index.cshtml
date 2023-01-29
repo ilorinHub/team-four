@@ -5,13 +5,11 @@
 	Layout = "~/Views/Shared/_LayoutStar.cshtml";
 }
 
-
-
 <div class="row">
 	<div class="col-md-12 grid-margin stretch-card">
 		<div class="card">
 			<div class="card-body">
-				<h4 class="card-title">Country</h4>
+				<h4 class="card-title">Countries</h4>
 				<p class="card-description">
 
 	<a asp-action="Create">Create New</a>
@@ -25,17 +23,9 @@
 			<th>
 								@Html.DisplayNameFor(model => model.Description)
 			</th>
+			
 			<th>
-								@Html.DisplayNameFor(model => model.Active)
-			</th>
-			<th>
-								@Html.DisplayNameFor(model => model.Deleted)
-			</th>
-			<th>
-								@Html.DisplayNameFor(model => model.CreatedAt)
-			</th>
-			<th>
-								@Html.DisplayNameFor(model => model.UpdatedAt)
+								Actions
 			</th>
 			<th></th>
 		</tr>
@@ -51,7 +41,7 @@
 									@Html.DisplayFor(modelItem => item.Description)
 							</td>
 
-							<td>
+							@*<td>
 									@Html.DisplayFor(modelItem => item.Active)
 							</td>
 							<td>
@@ -62,7 +52,7 @@
 							</td>
 							<td>
 									@Html.DisplayFor(modelItem => item.UpdatedAt)
-							</td>
+							</td>*@
 							<td>
 								<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
 								<a asp-action="Details" asp-route-id="@item.Id">Details</a> |

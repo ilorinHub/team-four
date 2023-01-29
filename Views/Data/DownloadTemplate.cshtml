@@ -1,0 +1,69 @@
+﻿@model ElectionWeb.Models.DataUpload
+
+@{
+    ViewData["Title"] = "Country";
+    Layout = "~/Views/Shared/_LayoutStar.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Data Upload</h4>
+                <p class="card-description">
+                    Upload Data
+                </p>
+                <form asp-action="DownloadFile">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="FileType" class="control-label"></label>
+                        <select id="fileType" class="form-control" asp-for="FileType">
+                            <option value="Country">Country</option>
+                            <option value="State">States</option>
+                            <option value="LGA">LGA</option>
+                            <option value="Constituency">Constituency</option>
+                            <option value="Ward">Ward</option>
+                            <option value="Polling Unit">Polling Unit</option>
+                        </select>
+                        <span asp-validation-for="FileType" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Download Template" class="btn btn-primary" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    function myFunction() {
+        var selected = $('#fileType :selected').text();
+        console.log(selected);
+    }
+
+    $(document).on("click", "#downloadButton", function(){
+        console.log("Adesina");
+        var selected = $('#fileType :selected').text();
+        $.ajax({
+            url: $(location).attr('origin') + "/Data/DownloadFile/?fileType=" + selected,
+            method: 'GET',
+            dataType: 'json', // added data type
+            success: function (res) {
+                console.log(res);
+                alert(res);
+            },
+            error:function(err){
+                console.log(err);
+            }
+        });
+    });
+   
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

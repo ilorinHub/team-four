@@ -9,8 +9,32 @@
       "PackagePath": "staticwebassets\\Documents\\ResultUploadTemplate.csv"
     },
     {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\constituencyTemplate.csv",
+      "PackagePath": "staticwebassets\\Documents\\constituencyTemplate.csv"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\countryTemplate.csv",
+      "PackagePath": "staticwebassets\\Documents\\countryTemplate.csv"
+    },
+    {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\file.csv",
       "PackagePath": "staticwebassets\\Documents\\file.csv"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\lgaTemplate.csv",
+      "PackagePath": "staticwebassets\\Documents\\lgaTemplate.csv"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\pu.csv",
+      "PackagePath": "staticwebassets\\Documents\\pu.csv"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\stateTemplate.csv",
+      "PackagePath": "staticwebassets\\Documents\\stateTemplate.csv"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\ward.csv",
+      "PackagePath": "staticwebassets\\Documents\\ward.csv"
     },
     {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\css\\maps\\horizontal-layout-dark\\style.css.map",

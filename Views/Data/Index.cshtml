@@ -18,7 +18,7 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="FileType" class="control-label"></label>
-                        <select class="form-control" asp-for="FileType">
+                        <select id="fileType" class="form-control" asp-for="FileType">
                             <option value="Country">Country</option>
                             <option value="State">States</option>
                             <option value="LGA">LGA</option>
@@ -30,20 +30,51 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="File" class="control-label"></label>
-                        <input asp-for="File" class="form-control" />
+                        <input required="false" asp-for="File" class="form-control" />
                         <span asp-validation-for="File" class="text-danger"></span>
                     </div>
 
                    
                     <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <input type="submit" value="Upload" class="btn btn-primary" />
                     </div>
-                </form>
+                   
 
+                </form>
+               @* <div class="form-group">
+                    <button id="downloadButton" type="button" value="Download Template" class="btn btn-primary" >
+                        Download Template
+                    </button>
+                </div>*@
             </div>
         </div>
     </div>
 </div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    function myFunction() {
+        var selected = $('#fileType :selected').text();
+        console.log(selected);
+    }
+
+    $(document).on("click", "#downloadButton", function(){
+        console.log("Adesina");
+        var selected = $('#fileType :selected').text();
+        $.ajax({
+            url: $(location).attr('origin') + "/Data/DownloadFile/?fileType=" + selected,
+            method: 'GET',
+            dataType: 'json', // added data type
+            success: function (res) {
+                console.log(res);
+                alert(res);
+            },
+            error:function(err){
+                console.log(err);
+            }
+        });
+    });
+   
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ElectionWeb.Models.ViewModels.WardResultViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutStar.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Ward Result</h4>
+
+                <p>
+                    <a asp-action="Create">Upload Result</a>
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Ward
+                            </th>
+                           
+                            <th>
+                                LGA Name
+                            </th>
+                            <th>
+                                Polling Units Counts
+                            </th>
+                               <th>
+                                Total Votes Casted
+                            </th>
+                             <th>
+                                Total Parties
+                            </th>
+                           
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ward)
+                                </td>
+                                
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LgaName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PollingUnitCounts)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TotalVote)
+                                </td>
+                                     <td>
+                                    @Html.DisplayFor(modelItem => item.TotalParties)
+                                    </td>
+                                <td>
+                           @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                            <a asp-action="Index" asp-route-wardId="@item.WardId">Details</a>
+                            @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                            </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,29 +1,18 @@
-﻿@model ElectionWeb.Models.Country
+﻿@using ElectionWeb.Utilities;
+@model ElectionWeb.Models.Country
 
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_LayoutStar.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>Country</h4>
-<hr />
-
-
-
-
-
 <div class="row">
 	<div class="col-md-12 grid-margin stretch-card">
 		<div class="card">
 			<div class="card-body">
-				<h4 class="card-title">Countries</h4>
-				<p class="card-description">
-
-	            <a asp-action="Create">Create New</a>
-				</p>
-
+				<h4 class="card-title">Edit</h4>
+             
+                
                 <form asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
@@ -36,32 +25,35 @@
                         <input asp-for="Description" class="form-control" />
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
-                    <input type="hidden" asp-for="Id" />
-                    <div class="form-group">
-                        <label asp-for="CodeId" class="control-label"></label>
-                        <input asp-for="CodeId" class="form-control" />
-                        <span asp-validation-for="CodeId" class="text-danger"></span>
-                    </div>
-                    <div class="form-group form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
-                        </label>
-                    </div>
-                    <div class="form-group form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" asp-for="Deleted" /> @Html.DisplayNameFor(model => model.Deleted)
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="CreatedAt" class="control-label"></label>
-                        <input asp-for="CreatedAt" class="form-control" />
-                        <span asp-validation-for="CreatedAt" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="UpdatedAt" class="control-label"></label>
-                        <input asp-for="UpdatedAt" class="form-control" />
-                        <span asp-validation-for="UpdatedAt" class="text-danger"></span>
-                    </div>
+                    @if(User.IsInRole(Roles.SuperAdmin)){
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="CodeId" class="control-label"></label>
+                            <input asp-for="CodeId" class="form-control" />
+                            <span asp-validation-for="CodeId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
+                            </label>
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Deleted" /> @Html.DisplayNameFor(model => model.Deleted)
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CreatedAt" class="control-label"></label>
+                            <input asp-for="CreatedAt" class="form-control" />
+                            <span asp-validation-for="CreatedAt" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="UpdatedAt" class="control-label"></label>
+                            <input asp-for="UpdatedAt" class="form-control" />
+                            <span asp-validation-for="UpdatedAt" class="text-danger"></span>
+                        </div>
+                    }
+                   
                     <div class="form-group">
                         <input type="submit" value="Save" class="btn btn-primary" />
                     </div>

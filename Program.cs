@@ -1,6 +1,7 @@
 using ElectionWeb.Data;
 using ElectionWeb.Models;
 using ElectionWeb.Services;
+using ElectionWeb.Utilities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,11 +13,21 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentity<ApplicationUsers, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<ApplicationUsers, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddDefaultUI();
 builder.Services.AddControllersWithViews();
 builder.Services.AddMvc();
 builder.Services.AddScoped<IFileService, FileService>();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy(Policies.ManageUsers, policy => policy.RequireAssertion(context => (
+                context.User.HasClaim(c => c.Type == UserManagementClaims.ManageUsers && c.Value == "True")
+    )));
+	options.AddPolicy(Policies.ManageRoles, policy => policy.RequireAssertion(context => (
+			   context.User.HasClaim(c => c.Type == RolesManagementClaims.ManageRoles && c.Value == "True")
+   )));
+});
 
 var app = builder.Build();
 

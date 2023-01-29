@@ -9,10 +9,11 @@ using ElectionWeb.Data;
 using ElectionWeb.Models;
 using Microsoft.AspNetCore.Identity;
 using ElectionWeb.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ElectionWeb.Controllers
 {
-    public class AspirantsController : BaseController
+	public class AspirantsController : BaseController
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUsers> _userManager;

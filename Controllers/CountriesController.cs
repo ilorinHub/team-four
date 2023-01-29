@@ -40,8 +40,14 @@ namespace ElectionWeb.Controllers
             {
                 return NotFound();
             }
+            var states = _context.StateRegions.Include(x => x.Country).Where(x => x.Country.Id == country.Id).ToList();
+            var viewModel = new CountriesViewModel
+            {
+                Country = country,
+                StateRegions = states
+            };
 
-            return View(country);
+            return View(viewModel);
         }
 
         // GET: Countries/Create

@@ -8,10 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using ElectionWeb.Data;
 using ElectionWeb.Models;
 using ElectionWeb.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ElectionWeb.Controllers
 {
-    public class ElectionTypesController : BaseController
+	public class ElectionTypesController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -64,6 +65,12 @@ namespace ElectionWeb.Controllers
                     Name = model.Name,
                     Description = model.Description
                 };
+                var nameExist = _context.ElectionTypes.Any(m => m.Name == model.Name);
+                if (nameExist)
+                {
+                    DisplayError("Name Already In Use");
+                    return View(model);
+                }
                 _context.Add(electionType);
                 await _context.SaveChangesAsync();
                 DisplayMessage("Election Type Created Successfully");

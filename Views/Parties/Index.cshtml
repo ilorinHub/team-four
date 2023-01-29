@@ -10,10 +10,10 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Country</h4>
+                <h4 class="card-title">Parties</h4>
                 <p class="card-description">
 
-                    <a asp-action="Create">Create New</a>
+                    <a class="btn btn-primary" asp-action="Create">Create New</a>
                 </p>
 
 
@@ -29,7 +29,7 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.Logo)
                             </th>
-                            <th>
+                           @* <th>
                                 @Html.DisplayNameFor(model => model.CodeId)
                             </th>
                             <th>
@@ -43,7 +43,7 @@
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.UpdatedAt)
-                            </th>
+                            </th>*@
                             <th></th>
                         </tr>
                     </thead>
@@ -54,7 +54,7 @@
                             <tr>
                                 <td>
                                     <div class="d-flex">
-                                        <img src="~/images/LabourPartyback.PNG"
+                                        <img src='@Url.Content(@logo)'
                                          alt="" />
                                     </div>
                                    
@@ -67,7 +67,7 @@
 
 
                                 </td>
-                                <td>
+                                @*<td>
                                     @Html.DisplayFor(modelItem => item.CodeId)
                                 </td>
                                 <td>
@@ -81,7 +81,7 @@
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.UpdatedAt)
-                                </td>
+                                </td>*@
                                 <td>
                                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

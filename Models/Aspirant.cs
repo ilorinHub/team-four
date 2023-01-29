@@ -6,6 +6,6 @@ namespace ElectionWeb.Models
     {
         public Party Party { get; set; }
         public Election Election { get; set; }
-        public IdentityUser User { get; set; }
+        public ApplicationUsers User { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ElectionWeb.Models.Result>
+﻿@model IEnumerable<ElectionWeb.Models.ViewModels.ResultViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -14,22 +14,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                Polling Unit
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CodeId)
+                Ward
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Active)
+               Total Votes
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Deleted)
+                Total Parties
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
+                Uploaded By
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UpdatedAt)
+               Role
             </th>
             <th></th>
         </tr>
@@ -38,22 +38,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.PollingUnitName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CodeId)
+                @Html.DisplayFor(modelItem => item.WardName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Active)
+                @Html.DisplayFor(modelItem => item.TotalVoteCount)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Deleted)
+                @Html.DisplayFor(modelItem => item.TotalParties)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
+                @Html.DisplayFor(modelItem => item.User)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UpdatedAt)
+                @Html.DisplayFor(modelItem => item.Role)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
