@@ -5,48 +5,63 @@
     Layout = "~/Views/Shared/_LayoutStar.cshtml";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Aspirants.First().Election)
-            </th>
-           <th>
-                @Html.DisplayNameFor(model => model.Aspirants.First().Party)
-            </th>
-            
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Aspirants</h4>
+                <p class="card-description">
+                    <a asp-action="Create">Create New</a>
+                </p>
 
-            <th>
-                @Html.DisplayNameFor(model => model.Aspirants.First().User)
-            </th>
-           
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Aspirants) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Election)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Party)
-            </td>
-                <td>
-                   Aspirant
-                </td>
-           
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Aspirants.First().Election)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Aspirants.First().Party)
+                            </th>
+
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Aspirants.First().User)
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Aspirants)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Election)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Party)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User)
+                                </td>
+
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>

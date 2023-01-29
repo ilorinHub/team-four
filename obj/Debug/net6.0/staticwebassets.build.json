@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "apTt83vjwvZpjxeJx0aiXD7jdPIdLgdcMOAkfwl1Lco=",
+  "Hash": "eoaybaQpiTjZSlsQl6CWN51M7S4ytc2vv8vyovf1B14=",
   "Source": "ElectionWeb",
   "BasePath": "_content/ElectionWeb",
   "Mode": "Default",
@@ -1241,12 +1241,12 @@
       "OriginalItemSpec": "wwwroot\\Documents\\lgaTemplate.csv"
     },
     {
-      "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\pu.csv",
+      "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\PollingUnitTemplate.csv",
       "SourceId": "ElectionWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\",
       "BasePath": "_content/ElectionWeb",
-      "RelativePath": "Documents/pu.csv",
+      "RelativePath": "Documents/PollingUnitTemplate.csv",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1255,7 +1255,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Documents\\pu.csv"
+      "OriginalItemSpec": "wwwroot\\Documents\\PollingUnitTemplate.csv"
     },
     {
       "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\ResultUploadTemplate.csv",
@@ -1292,12 +1292,12 @@
       "OriginalItemSpec": "wwwroot\\Documents\\stateTemplate.csv"
     },
     {
-      "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\ward.csv",
+      "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\wardTemplate.csv",
       "SourceId": "ElectionWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\",
       "BasePath": "_content/ElectionWeb",
-      "RelativePath": "Documents/ward.csv",
+      "RelativePath": "Documents/wardTemplate.csv",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,7 +1306,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Documents\\ward.csv"
+      "OriginalItemSpec": "wwwroot\\Documents\\wardTemplate.csv"
     },
     {
       "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\favicon.ico",
@@ -2737,6 +2737,23 @@
       "OriginalItemSpec": "wwwroot\\images\\adeshiname@gmail.comUntitled-1s.jpg"
     },
     {
+      "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\APCAPC.jpg",
+      "SourceId": "ElectionWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\",
+      "BasePath": "_content/ElectionWeb",
+      "RelativePath": "images/APCAPC.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\APCAPC.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\APCFfMcWH5UAAADaMp.jpg",
       "SourceId": "ElectionWeb",
       "SourceType": "Discovered",
@@ -4010,6 +4027,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\front.PNG"
+    },
+    {
+      "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\LaborPartyLabour_Partylogo.png",
+      "SourceId": "ElectionWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\",
+      "BasePath": "_content/ElectionWeb",
+      "RelativePath": "images/LaborPartyLabour_Partylogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\LaborPartyLabour_Partylogo.png"
     },
     {
       "Identity": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Labour Partyfront.PNG",

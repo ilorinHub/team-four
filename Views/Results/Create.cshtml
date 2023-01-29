@@ -5,35 +5,47 @@
     Layout = "~/Views/Shared/_LayoutStar.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Result</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="File" class="control-label"></label>
-                <input asp-for="File" class="form-control" />
-                <span asp-validation-for="File" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Countries</h4>
+                <p class="card-description">
 
-        <form asp-action="DownloadTemplateNow">
-            <div class="form-group">
-                <input type="submit" value="Download" class="btn btn-primary" />
+                    <a asp-action="Create">Create New</a>
+                </p>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="Create" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="File" class="control-label"></label>
+                                <input asp-for="File" class="form-control" />
+                                <span asp-validation-for="File" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+
+                        <form asp-action="DownloadTemplateNow">
+                            <div class="form-group">
+                                <input type="submit" value="Download" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <a asp-action="Index">Back to List</a>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

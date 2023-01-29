@@ -2,8 +2,8 @@
 @model ElectionWeb.Models.ViewModels.ResultDetailViewModel
 
 @{
-    ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_LayoutStar.cshtml";
+	ViewData["Title"] = "Details";
+	Layout = "~/Views/Shared/_LayoutStar.cshtml";
 }
 
 
@@ -18,7 +18,7 @@
 				<h4 class="card-title">@Model.PollingUnitName</h4>
 				<p class="card-description">
 
-					
+
 				</p>
 				<dl class="row">
 
@@ -85,11 +85,11 @@
 								<td>
 									@Html.DisplayFor(modelItem => item.PartyCount)
 								</td>
-							@*	<td>
-									<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-									<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-									<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-								</td>*@
+								@*	<td>
+							<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+							<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+							<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+							</td>*@
 							</tr>
 						}
 					</tbody>
@@ -98,32 +98,40 @@
 		</div>
 	</div>
 
-	 <div class="col-lg-6 grid-margin stretch-card">
-			  <div class="card">
-				<div class="card-body">
-				  <h4 class="card-title">Bar chart</h4>
-				  <canvas id="barChart"></canvas>
-				</div>
-			  </div>
+	<div class="col-lg-6 grid-margin stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Bar chart</h4>
+				<canvas id="barChart"></canvas>
 			</div>
+		</div>
+	</div>
+
+	<p class="card-description">
+
+		<a class="btn btn-success">Share Result</a>
+	</p>
 
 </div>
 
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+	<a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+	<a asp-action="Index">Back to List</a>
 </div>
 
 <script src="~/vendors/chart.js/Chart.min.js"></script>
 @*<script src="~/js/chart.js"></script>*@
+
 <script>
+
+	
 
 	function getRandomRgb(a) {
 		var num = Math.round(0xffffff * Math.random());
 		var r = num >> 16;
 		var g = num >> 8 & 255;
 		var b = num & 255;
-		return 'rgba(' + r + ', ' + g + ', ' + b +', ' + a + ')';
+		return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + a + ')';
 	}
 
 	var parties = @Html.Raw(JsonConvert.SerializeObject(Model.PartyResult));
@@ -131,7 +139,7 @@
 	let counts = [];
 	let color = [];
 	let bColor = [];
-	parties.forEach(function(party){
+	parties.forEach(function (party) {
 		console.log(party);
 		label.push(party["PartyName"]);
 		counts.push(party["PartyCount"]);
@@ -141,8 +149,8 @@
 
 	var data = {
 		labels: label,
-	
-	datasets: [{
+
+		datasets: [{
 			label: '# of Votes',
 			data: counts,
 			backgroundColor: color,

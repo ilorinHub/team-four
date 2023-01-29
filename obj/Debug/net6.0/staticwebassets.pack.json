@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ElectionWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\PollingUnitTemplate.csv",
+      "PackagePath": "staticwebassets\\Documents\\PollingUnitTemplate.csv"
+    },
+    {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\ResultUploadTemplate.csv",
       "PackagePath": "staticwebassets\\Documents\\ResultUploadTemplate.csv"
     },
@@ -25,16 +29,12 @@
       "PackagePath": "staticwebassets\\Documents\\lgaTemplate.csv"
     },
     {
-      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\pu.csv",
-      "PackagePath": "staticwebassets\\Documents\\pu.csv"
-    },
-    {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\stateTemplate.csv",
       "PackagePath": "staticwebassets\\Documents\\stateTemplate.csv"
     },
     {
-      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\ward.csv",
-      "PackagePath": "staticwebassets\\Documents\\ward.csv"
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\Documents\\wardTemplate.csv",
+      "PackagePath": "staticwebassets\\Documents\\wardTemplate.csv"
     },
     {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\css\\maps\\horizontal-layout-dark\\style.css.map",
@@ -385,8 +385,16 @@
       "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Regular.woff2"
     },
     {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\APCAPC.jpg",
+      "PackagePath": "staticwebassets\\images\\APCAPC.jpg"
+    },
+    {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\APCFfMcWH5UAAADaMp.jpg",
       "PackagePath": "staticwebassets\\images\\APCFfMcWH5UAAADaMp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\LaborPartyLabour_Partylogo.png",
+      "PackagePath": "staticwebassets\\images\\LaborPartyLabour_Partylogo.png"
     },
     {
       "Id": "C:\\Users\\Shenor\\source\\repos\\ElectionWeb\\wwwroot\\images\\Labour PartyUntitled-1s.jpg",

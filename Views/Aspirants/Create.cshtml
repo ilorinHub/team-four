@@ -5,10 +5,16 @@
     Layout = "~/Views/Shared/_LayoutStar.cshtml";
 }
 
-<h1>Create</h1>
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Countries</h4>
+                <p class="card-description">
 
-<h4>Aspirant</h4>
-<hr />
+                    <a asp-action="Create">Create New</a>
+                </p>
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -38,6 +44,12 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

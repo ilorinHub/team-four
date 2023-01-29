@@ -112,6 +112,7 @@ namespace ElectionWeb.Controllers
                 };
                 _context.Add(aspirant);
                 await _context.SaveChangesAsync();
+                DisplayMessage("Aspirant Added to Election Successfully");
                 return RedirectToAction(nameof(Index));
             }
             return View(model);
